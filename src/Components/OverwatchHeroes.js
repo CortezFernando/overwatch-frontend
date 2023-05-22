@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-import OneOverwatchHero from "../OneOverwatchHero";
+import OverwatchHero from "./OverwatchHero";
 
 const API = process.env.REACT_APP_API_URL;
 
@@ -23,14 +23,14 @@ function OverwatchHeroes() {
         <table>
           <thead>
             <tr>
-              <th>OverwatchHero</th>
+              <th>Overwatch Hero</th>
               <th></th>
               
             </tr>
           </thead>
-          <tbody>
-            {overwatch.map((OverwatchHero) => {
-              return <OneOverwatchHero key={OverwatchHero.overwatch_id} OneOverwatchHero={OverwatchHero} />;
+          <tbody className="hero-det">
+            {overwatch.map((overwatchHero) => {
+              return <OverwatchHero key={overwatchHero.overwatch_id} overwatchHero={overwatchHero} />;
             })}
           </tbody>
         </table>

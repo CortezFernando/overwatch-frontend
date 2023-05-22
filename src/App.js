@@ -1,21 +1,23 @@
 
 import './App.css';
-
+// import { useState } from react
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 //pages
 import Home from "./Pages/Home";
 import Index from "./Pages/Index";
-import NewOverwatchHero from "./Pages/NewOverwatchHero";
-import EditOverwatchHero from "./Pages/EditOverwatchHero";
-import OverwatchHeroById from "../Pages/OverwatchHeroById";
-import FourOFour from "./Pages/FourOFour";
-
-
-
+//  import NewOverwatchHero from "./Pages/NewOverwatchHero";
+ import EditOverwatchHero from "./Pages/EditOverwatchHero";
+ import OverwatchHerobyId from "./Pages/OverwatchHerobyId";
+//  import FourOFour from "./Pages/FourOFour";
+import Collections from "./Components/Collections";
+  import CollectionNewForm from "./Components/CollectionNewForm"
+import CollectionEditForm from './Components/CollectionEditForm';
+// const [OverwatcHero, setOverwatcHero] = useState 
 //Components
-import NavBar from "./Components/Nav.Bar";
-import About from "./Components/About.js";
+import NavBar from "./Components/NavBar";
+
+// import About from "./Components/About.js";
 
 function App() {
   return (
@@ -24,12 +26,16 @@ function App() {
         <NavBar />
         <main>
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<Home />} /> 
             <Route path="/OverwatchHero" element={<Index />} />
-            <Route exact path="/OverwatchHero/:overwatchId" element={<OverwatchHeroById/>} />
-            <Route path="/OverwatchHero/new" element={<NewOverwatchHero />} />
-            <Route path="/OverwatchHero/:overwatchId/edit" element={<EditOverwatchHero />} />
-             <Route path="*" element={<FourOFour />} />  
+            <Route exact path="/OverwatchHero/:overwatchId" element={<OverwatchHerobyId/>} /> 
+              <Route path="/OverwatchHero/:overwatchId/Collections/new" element={<CollectionNewForm />} />   
+             <Route path="/OverwatchHero/:overwatchId/edit" element={<EditOverwatchHero />} /> 
+            <Route exact path="/OverwatchHero/:overwatch_id/Collections" element={<Collections/>} />
+            <Route path="/OverwatchHero/:overwatchId/Collections/edit" element={<CollectionEditForm />} /> 
+            {/* <Route path="/OverwatchHero/:overwatchId/Collections/:collectionid/edit" element={<CollectionEditForm />} /> */}
+            
+             {/* <Route path="*" element={<FourOFour />} />   */}
           </Routes>
         </main>
       </Router>

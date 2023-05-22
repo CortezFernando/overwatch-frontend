@@ -2,7 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import axios from "axios";
-import Collections from "./Collections";
+import OverwatchHeroes from "./OverwatchHeroes";
 
 const API = process.env.REACT_APP_API_URL
  
@@ -39,7 +39,7 @@ function OverwatchHeroDetails() {
 
 return (
   <article className="hero-det">
-    <img src={hero.image} alt="hero picture" />
+    <img src={hero.image} alt="pic" />
     <h2>{hero.name}</h2>
     {<h5> Role: {hero.role}, Base_of_Operations: {hero.base_of_operations} </h5>}
     <div className="showNavigation">
@@ -59,7 +59,7 @@ return (
       </div>
     </div>
     <h3>Collections</h3>
-  <Collections />
+  <OverwatchHeroes />
   </article>
  ) 
 }
