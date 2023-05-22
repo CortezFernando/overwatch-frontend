@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-import OverwatchHero from "./OverwatchHero";
+import OverwatchHero from "./OverwatchHero"; 
+import "./OverwatchHero.css"
 
 const API = process.env.REACT_APP_API_URL;
 

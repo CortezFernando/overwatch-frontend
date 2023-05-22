@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 // import Collection from "./Collection";
 //   import CollectionEditForm from "./CollectionEditForm";
-//   import OverwatchHeroes from "./OverwatchHeroes";
+//    import OverwatchHeroes from "./OverwatchHeroes";
 import CollectionDetails from "./CollectionDetails";
 
 const API = process.env.REACT_APP_API_URL;
@@ -68,15 +68,15 @@ function Collections() {
     <section className="Collections">
         
       <h2>Collections</h2>
-      {/* <CollectionEditForm handleSubmit={handleSubmit}>
+       {/* <CollectionEditForm handleSubmit={handleSubmit}>
         <h3>Edit Collection</h3>
-      </CollectionEditForm> */}
+      </CollectionEditForm>   */}
       {collections.map((collection) => (
         <CollectionDetails
           key={collection.overwatch_id}
           collect={collection}
-        //   handleDelete={handleDelete}
-        //   handleEdit={handleEdit}
+          handleDelete={handleDelete}
+          handleEdit={handleEdit}
         />
       ))}
     </section>

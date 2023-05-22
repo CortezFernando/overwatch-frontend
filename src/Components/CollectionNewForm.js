@@ -47,8 +47,8 @@ function CollectionNewForm(props) {
 }
   return (
     <div className="New Collection">
-      {/* renders the children elements of this component   */}
-      {/* <ReviewForm> some child element </ReviewFrom> */}
+      {/* renders the children elements of this component   
+       <ReviewForm> some child element </ReviewForm> */}
       {props.children}
       <form onSubmit={handleSubmit}>
         <label htmlFor="Name">Name:</label>
@@ -63,9 +63,9 @@ function CollectionNewForm(props) {
         />
          <label htmlFor="size">Size:</label>
          <input
-          id="Size"
+          id="size"
           type="text"
-          name="Size"
+          name="size"
           required
           value={collection.size}
           onChange={handleTextChange}

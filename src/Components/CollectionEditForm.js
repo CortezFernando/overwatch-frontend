@@ -4,9 +4,9 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 
 export default function CollectionEditForm() {
-  let { overwatchId } = useParams();
+  let { overwatch_id, collection_id } = useParams();
   const navigate = useNavigate();
-
+console.log(overwatch_id)
   const [collection, setCollection] = useState({
     name: "",
     size: "",
@@ -15,15 +15,16 @@ export default function CollectionEditForm() {
     price: "",
     is_owned: "",
     image: "", 
-    overwatch_id: overwatchId,
+    overwatch_id: overwatch_id,
   });
 
   useEffect(() => {
-    axios.get(`http://localhost:3003/OverwatchHero/${overwatchId}/Collections`).then((response) => {
-      setCollection(response.data);
+    axios.get(`http://localhost:3003/OverwatchHero/${overwatch_id}/Collections`).then((response) => {
+      setCollection(response.data); 
+      
     });
-  }, [overwatchId]);
-
+  }, [overwatch_id]);
+console.log(overwatch_id)
   const handleTextChange = (event) => {
     setCollection({ ...collection, [event.target.name]: event.target.value });
   };
@@ -31,9 +32,9 @@ export default function CollectionEditForm() {
   const handleSubmit = (event) => {
     event.preventDefault();
     axios
-      .put(`http://localhost:3003/OverwatchHero/${overwatchId}/Collections`, collection)
+      .put(`http://localhost:3003/OverwatchHero/${overwatch_id}/Collections`, collection)
       .then((response) => {
-        navigate(`/OverwatchHero/${overwatchId}/Collections`);
+        navigate(`/OverwatchHero/${overwatch_id}/Collections/${collection_id}`);
       })
       .catch((err) => {
         console.log(err);
