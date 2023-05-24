@@ -14,11 +14,11 @@ I play this game called Overwatch during my breaks from code when I need a short
 
 deployment link frontend - https://app.netlify.com/sites/celadon-dragon-c44712/deploys 
 deployment link backend -https://overwatch-backend.onrender.com 
-trello - 
+trello - link https://trello.com/b/ZXu7uK5F/portfolio-project-mod4
 
 Name: Fernando Cortez
 Role: Full-stack Developer Student
-Description: Fernando is a Pursuit 9.3 Fellow who contributed to both front-end and back-end development.
+Description: Fernando is a Pursuit 9.3 Fellow who created both front-end and back-end development.
 
 
 ## Available Scripts
