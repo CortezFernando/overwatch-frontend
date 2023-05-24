@@ -4,7 +4,7 @@ import CollectionNewForm from "../Components/CollectionNewForm"
 function newCollection() {
   return (
     <div className="New">
-      <h2>New Hat</h2>
+      <h2>New Collection</h2>
       <CollectionNewForm />
     </div>
   );

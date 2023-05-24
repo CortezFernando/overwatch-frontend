@@ -45,7 +45,7 @@ export default function CollectionDetails({collect}) {
 
             {collection.price > 150 ? (<h4> This is a Collector's Item 👜</h4>) : (<h4> This is not a Collector's Item 👑</h4>)}
             <div className="functionality">
-                <Link to={`/Collections`}>
+                <Link to={`/OverwatchHero`}>
                     <button className="back-button">Back</button>
                 </Link>
 

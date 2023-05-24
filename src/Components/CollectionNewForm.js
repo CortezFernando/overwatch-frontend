@@ -1,9 +1,10 @@
  import { useState, useEffect } from "react";
  import { useParams } from "react-router-dom";
 
-function CollectionNewForm(props) {
+function CollectionNewForm(collect) {
   let { overwatchId } = useParams();
-  const { CollectionDetails } = props;
+  const { CollectionDetails } = collect; 
+
 
   const [collection, setCollection] = useState({
      name: "",
@@ -25,14 +26,14 @@ function CollectionNewForm(props) {
     if ( CollectionDetails) {
       setCollection(CollectionDetails);
     }
-  }, [overwatchId, CollectionDetails, props]);
+  }, [overwatchId, CollectionDetails, collect]);
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    props.handleSubmit(collection, overwatchId);
+    collect.handleSubmit(collection, overwatchId);
     if (CollectionDetails) {
         console.log("collection id:", CollectionDetails.collection_id)
-      props.toggleView();
+      collect.toggleView();
     }
     setCollection({
         name: "",
@@ -47,9 +48,9 @@ function CollectionNewForm(props) {
 }
   return (
     <div className="New Collection">
-      {/* renders the children elements of this component   
-       <ReviewForm> some child element </ReviewForm> */}
-      {props.children}
+       {/* renders the children elements of this component   
+       <ReviewForm> some child element </ReviewForm>  */}
+      {collect.children}
       <form onSubmit={handleSubmit}>
         <label htmlFor="Name">Name:</label>
         <input
@@ -69,14 +70,18 @@ function CollectionNewForm(props) {
           required
           value={collection.size}
           onChange={handleTextChange}
+          placeholder="Collection Size"
+          
         />
         <label htmlFor="type">Type:</label>
         <input
-          id="Type"
+          id="type"
           type="text"
-          name="Type"
+          name="type"
           values={collection.type}
           onChange={handleTextChange}
+          placeholder="Collection Type"
+          required
         />
        
        <label htmlFor="color">Color:</label>
@@ -86,6 +91,8 @@ function CollectionNewForm(props) {
           name="color"
           values={collection.color}
           onChange={handleTextChange}
+          placeholder="Collection Color"
+          required
         />
           <label htmlFor="price">Price:</label>
           <input
@@ -94,6 +101,8 @@ function CollectionNewForm(props) {
           name="price"
           values={collection.price}
           onChange={handleTextChange}
+          placeholder="Collection Price"
+          required
         />
         <br />
         <label htmlFor="is_owned">Is_Owned:</label>
@@ -103,6 +112,8 @@ function CollectionNewForm(props) {
           name="is_owned"
           values={collection.is_owned}
           onChange={handleTextChange}
+            placeholder="Collection Is_Owned"
+            required
         />
         <label htmlFor="image">Image:</label>
         <input
@@ -111,6 +122,8 @@ function CollectionNewForm(props) {
           name="image"
           values={collection.image}
           onChange={handleTextChange}
+            placeholder="Collection Image"
+            required
         />
         <input type="submit" />
       </form>
@@ -119,3 +132,10 @@ function CollectionNewForm(props) {
 }
 
 export default CollectionNewForm;
+
+
+
+
+
+
+

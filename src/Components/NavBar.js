@@ -12,6 +12,9 @@ export default function NavBar() {
       <button>
         <Link to="/OverwatchHero/:overwatchid/new">New Hero</Link>
       </button>
+      <button>
+        <Link to="/OverwatchHero/About">About</Link>
+      </button>
     </nav>
   );
 }

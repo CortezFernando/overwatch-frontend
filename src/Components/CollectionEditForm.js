@@ -4,9 +4,9 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 
 export default function CollectionEditForm() {
-  let { overwatch_id, collection_id } = useParams();
+  let { overwatch_id } = useParams();
   const navigate = useNavigate();
-console.log(overwatch_id)
+
   const [collection, setCollection] = useState({
     name: "",
     size: "",
@@ -21,10 +21,10 @@ console.log(overwatch_id)
   useEffect(() => {
     axios.get(`http://localhost:3003/OverwatchHero/${overwatch_id}/Collections`).then((response) => {
       setCollection(response.data); 
-      
+    
     });
   }, [overwatch_id]);
-console.log(overwatch_id)
+
   const handleTextChange = (event) => {
     setCollection({ ...collection, [event.target.name]: event.target.value });
   };
@@ -34,7 +34,7 @@ console.log(overwatch_id)
     axios
       .put(`http://localhost:3003/OverwatchHero/${overwatch_id}/Collections`, collection)
       .then((response) => {
-        navigate(`/OverwatchHero/${overwatch_id}/Collections/${collection_id}`);
+        navigate(`/OverwatchHero/${overwatch_id}/Collections`);
       })
       .catch((err) => {
         console.log(err);
@@ -45,7 +45,7 @@ console.log(overwatch_id)
     <div>
       <h1>Edit Collection</h1>
       <form onSubmit={handleSubmit}>
-        <label htmlFor="Name">Name:</label>
+        <label htmlFor="name">Name:</label>
         <input
           id="name"
           value={collection.name}
@@ -57,18 +57,18 @@ console.log(overwatch_id)
         />
          <label htmlFor="size">Size:</label>
          <input
-          id="Size"
+          id="size"
           type="text"
-          name="Size"
+          name="size"
           required
           value={collection.size}
           onChange={handleTextChange}
         />
         <label htmlFor="type">Type:</label>
         <input
-          id="Type"
+          id="type"
           type="text"
-          name="Type"
+          name="type"
           values={collection.type}
           onChange={handleTextChange}
         />

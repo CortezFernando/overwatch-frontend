@@ -16,4 +16,4 @@ function Collection({ collection }) {
         </tr>
     )
 }
-export default Hat;
+export default Collection;

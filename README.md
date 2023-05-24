@@ -2,6 +2,25 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+
+
+# About devs & links
+
+I play this game called Overwatch during my breaks from code when I need a short mental break, and I have been playing since before pursuit as well. During which the game has gone through changes and the characters are pretty cool, I do happen to collect quite a few collectibles so I thought why not do a app on something I enjoy. So here we are, I created an app that displays briefly 37 heroes and some collections for each hero using a database that I inserted myself and displays images I found online.
+
+
+
+
+
+deployment link frontend - https://app.netlify.com/sites/celadon-dragon-c44712/deploys 
+deployment link backend -https://overwatch-backend.onrender.com 
+trello - 
+
+Name: Fernando Cortez
+Role: Full-stack Developer Student
+Description: Fernando is a Pursuit 9.3 Fellow who contributed to both front-end and back-end development.
+
+
 ## Available Scripts
 
 In the project directory, you can run:
